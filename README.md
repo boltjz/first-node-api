@@ -1,3 +1,6 @@
+## First node API - HTTP package
+Rest API using only from native nodejs packages
+
 node version require > v16 (LTS)
 
 ```bash
