@@ -6,6 +6,10 @@ const host = "localhost"
 const port = 3333;
 
 const server = http.createServer(async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
   const { method, url } = req;
 
   await bodyToJson(req, res);
