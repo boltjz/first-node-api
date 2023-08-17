@@ -9,6 +9,13 @@ const server = http.createServer(async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    // Lidar com pré-requisições OPTIONS
+    res.writeHead(200);
+    res.end();
+    return;
+  }
   
   const { method, url } = req;
 
